@@ -1,0 +1,48 @@
+{
+    "timezone": "UTC",
+    "url": {
+      "host": "jsbin.zrmj.com",
+      "prefix": "/",
+      "ssl": true
+    },
+    "max-request-size": "1MB",
+    "max-age": 86400,
+    "store": {
+      "adapter": "mysql",
+      "mysql": {
+        "host": "db",
+        "user": "jsbin",
+        "password": "jsbin-secret",
+        "database": "jsbin"
+      }
+    },
+    "mail": {
+      "adapter": "sendmail",
+      "sendmail": {},
+      "smtp": {
+        "service": "Gmail",
+        "auth": {
+            "user": "",
+            "pass": ""
+        }
+      }
+    },
+    "server": {
+      "logger": "none"
+    },
+    "security": {
+      "allowAnonymousPreview": false
+    },
+    "session": {
+      "secret": "insertrandomkeyhere"
+    },
+    "github": {
+      "id": "90d2de29c914d31345d7",
+      "secret": "4c3b605892ce507674346eecf003526a975aa721"
+    },
+    "api": {
+      "allowAnonymousReadWrite": false,
+      "allowAnonymousRead": true,
+      "requireSSL": true
+    }
+  }

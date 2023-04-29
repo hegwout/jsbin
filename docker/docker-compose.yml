@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  db:
+    image: mariadb:10.5
+    container_name: jsbin_db
+    restart: always
+    environment:
+      - MYSQL_DATABASE=jsbin
+      - MYSQL_USER=jsbin
+      - MYSQL_PASSWORD=jsbin-secret
+      - MYSQL_RANDOM_ROOT_PASSWORD=1
+    volumes:
+      - db_data:/var/lib/mysql
+
+  jsbin:
+    build: .
+    container_name: jsbin
+    ports:
+      - "3001:8000"
+    volumes:
+      - "./config.json:/config.json"
+    environment:
+      - JSBIN_CONFIG=/config.json
+    depends_on:
+      - db
+
+volumes:
+  db_data:
